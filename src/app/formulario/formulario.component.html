@@ -1,0 +1,32 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+<h1> <span class="acao">{{acao}}</span> Cliente</h1>
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <small>Filtro</small>
+                <form class="formulario" [formGroup]="formCliente" (ngSubmit)="salvarCliente()">
+                    <input type="hidden" class="form-control" id="id" name="id" formControlName="id" value="{{id}}">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <select class="form-control" id="porte" name="porte" formControlName="porte">
+                                    <option selected disabled> - selecione porte - </option>
+                                    <option *ngFor="let item of listaPorte" value="{{item}}">{{item}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="nome" name="nome" formControlName="nome">
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <button type="submit" class="btn btn-info"><span class="acao">{{acao}}</span></button>
+                        </div>
+                    </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
